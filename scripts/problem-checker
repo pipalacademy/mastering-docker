@@ -1,0 +1,41 @@
+#! /opt/venv/bin/python
+import click
+from pathlib import Path
+import os
+import subprocess
+import sys
+
+_root = os.getenv("PROBLEM_ROOT") or"/opt/mastering-docker/problems"
+ROOT = Path(_root)
+
+@click.group()
+def cli():
+    pass
+
+@cli.command("list")
+def _list():
+    """List Problems.
+    """
+    path = ROOT / "problems.txt"
+    problems = path.read_text().splitlines()
+    for p in problems:
+        print(p)
+
+@cli.command()
+@click.argument("problem")
+def show(problem):
+    """Show a problem
+    """
+    path = ROOT / problem / "description.txt"
+    print(path.read_text())
+
+@cli.command()
+@click.argument("problem")
+def verify(problem):
+    """Verifies if a problem has been solved.
+    """
+    path = ROOT / problem / "check.py"
+    subprocess.call([sys.executable, path])
+
+if __name__ == "__main__":
+    cli()

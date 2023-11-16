@@ -1,0 +1,15 @@
+Install cowsay command.
+
+Install cowsay command using apt-get.
+
+You should be able run cowsay command using:
+
+$ /usr/games/cowsay hello
+ _______
+< hello >
+ -------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||

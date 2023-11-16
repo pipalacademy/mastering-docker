@@ -1,2 +1,4 @@
 ansible
 pyinfra
+Click
+tabulate
