@@ -1,0 +1,55 @@
+---
+- name: setup pipal node
+  hosts: all
+  vars_files:
+    - vars.yml
+  gather_facts: true
+
+  tasks:
+    - name: Update apt cache
+      apt: update_cache=yes cache_valid_time=604800 # 1 week in seconds (7*24*3600)
+
+    - name: install dependencies
+      apt: package={{item}} state=present
+      with_items: "{{ system_packages }}"
+
+    - name: create user groups
+      group: name={{item.name}} state={{item.state | default('present')}}
+      with_items: "{{ users }}"
+
+    - name: Add users
+      user:
+        name: "{{ item.name }}"
+        state: "{{ item.state | default('present') }}"
+        password: "{{ item.password }}"
+        group: "{{ item.name }}"
+        groups: "{{ item.groups }}"
+        shell: "/bin/bash"
+      with_items: "{{ users }}"
+
+    - name: Add authorized keys
+      authorized_key: "user={{ item.0.name }} key='{{ lookup('file', item.1) }}'"
+      with_subelements:
+         - "{{ users }}"
+         - authorized_keys
+
+    # - name: disable root login
+    #   lineinfile: "dest=/etc/ssh/sshd_config state=present regexp='^PermitRootLogin' line='PermitRootLogin no'"
+
+    - name: enable password authentication
+      lineinfile: "dest=/etc/ssh/sshd_config state=present regexp='^PasswordAuthentication' line='PasswordAuthentication yes'"
+
+    - name: enable password authentication - part 2
+      lineinfile: "dest=/etc/ssh/sshd_config state=present regexp='^KbdInteractiveAuthentication' line='KbdInteractiveAuthentication yes'"
+      notify:
+        - Restart ssh
+
+    - name: enable password less sudo for users in sudo group
+      lineinfile: "dest=/etc/sudoers state=present regexp='^%sudo' line='%sudo ALL=(ALL:ALL) NOPASSWD:ALL'"
+
+
+  handlers:
+    - name: Restart ssh
+      ansible.builtin.service:
+        name: ssh
+        state: restarted

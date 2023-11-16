@@ -1,0 +1,22 @@
+system_packages:
+  - build-essential
+  - docker.io
+  - python-is-python3
+  - wget
+  - zip
+  - unzip
+
+users:
+  - name: pipal
+    groups:
+      - sudo
+      - docker
+    password: "$6$HX4soRsALWaDiOzk$dleNXuixqbyvRn/Ps8b3/ugYHBVMzZOXAPwV9e7g5VZ6cYIb.nNEykT1CjdA4PL73LKRHeeZptHEUttRoZLX70"
+    authorized_keys: []
+  - name: anand
+    groups:
+      - sudo
+      - docker
+    password: "$6$HX4soRsALWaDiOzk$dleNXuixqbyvRn/Ps8b3/ugYHBVMzZOXAPwV9e7g5VZ6cYIb.nNEykT1CjdA4PL73LKRHeeZptHEUttRoZLX70"
+    authorized_keys:
+      - authorized_keys/anand-safar-id-ed25519.pub
