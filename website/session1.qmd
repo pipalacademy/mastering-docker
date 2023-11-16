@@ -1,0 +1,28 @@
+# Session 1: Managing a Remote Server
+
+::: {.callout-warning}
+This lesson is work in progress.
+:::
+
+## Working on remote machines
+
+## Working with files & directories
+
+pwd
+ls
+cat
+mkdir
+cd
+vi
+ln
+
+## Installing software
+
+apt-get
+
+## sudo
+
+## Writing shell scripts
+
+## Deploying static sites with nginx
+

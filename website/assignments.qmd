@@ -1,0 +1,22 @@
+# Assignments
+
+This is rough plan of assignments for the course.
+
+## Assignment 1
+
+### Cowsay
+
+Install `cowsay` command using `apt-get`.
+
+### Deploy a static website
+
+Deploy this training notes and setup https using lets encrypt.
+
+website: https://docker.k8x.in/
+
+### Deploy a Python app
+
+TODO: write a simple webapp to be deployed.
+
+- deploy it as a systemd service
+- depl

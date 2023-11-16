@@ -1,0 +1,12 @@
+# Session 0 - Getting Started
+
+## Vim Editor
+
+`Vi` or `Vim` is a popular editor in the unix world. While may be happy with the modern editors like vscode etc., `vi` is very handly when you have to edit a file on a remote server.
+
+Please watch the following video to learn the basic of the Vim editor.
+
+{{< video https://www.youtube.com/embed/ggSyF1SVFr4 >}}
+
+## Task 1
+

@@ -1,0 +1,34 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+
+website:
+  title: "Mastering Docker"
+  page-navigation: true
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - assignments.qmd
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Getting Started"
+        contents:
+          - getting-started/lab-setup.qmd
+          - getting-started/vim.qmd
+      - session1.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
