@@ -1,6 +1,4 @@
----
-title: "Mastering Docker"
----
+# Mastering Docker
 
 Welcome to the Mastering Docker course.
 
