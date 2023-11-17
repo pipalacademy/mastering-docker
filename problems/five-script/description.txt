@@ -1,0 +1,12 @@
+Write a shell script five.sh in the home directory to print five numbers.
+
+The file should be executable.
+
+It should be possible to run it as:
+
+$ ./five.sh
+1
+2
+3
+4
+5

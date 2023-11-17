@@ -1,1 +1,3 @@
 figlet
+cowsay
+five-script

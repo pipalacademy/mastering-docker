@@ -1,6 +1,7 @@
 from pathlib import Path
 import subprocess
 import re
+import os
 
 def ok(title):
     print("✔", title)
@@ -10,7 +11,14 @@ def fail(title):
 
 def check_file(title, path, exists=True):
     path = Path(path)
+
     if exists == path.exists():
+        ok(title)
+    else:
+        return fail(title)
+
+def check_file_executable(title, path):
+    if os.access(str(path), os.X_OK):
         ok(title)
     else:
         fail(title)
@@ -32,5 +40,4 @@ def check_command_output(title, command, stdout=""):
         ok(title)
     else:
         fail(title)
-        print(a)
-        print(b)
+
