@@ -92,7 +92,20 @@ $ docker run figlet
 |_| |_|\___|_|_|\___/   \__,_|\___/ \___|_|\_\___|_|
 ```
 
-### Example figsay
+### Problem: Fortune
+
+Fortune is a popular unix command that shows random quotes.
+It can be installed using apt package `fortune-mod`.
+
+Build a docker image `fortune` that installs the `fortune-mod` apt package
+and runs the `/usr/games/fortune` command when a container is started with this image.
+
+```
+$ docker run fortune
+You have Egyptian flu: you're going to be a mummy.
+```
+
+### Example: figsay
 
 Let's combine figlet and cowsay commands and package it as a docker image.
 
