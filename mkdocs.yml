@@ -1,0 +1,32 @@
+site_name: Mastering Docker
+
+docs_dir: website
+
+site_author: Anand Chitpothu
+copyright: Copyright © 2022-23, Pipal Academy
+
+theme:
+  name: material
+
+nav:
+  - Getting Started:
+    - getting-started/lab-setup.md
+    - getting-started/vim.md
+  - Managing Servers:
+    - session1.md
+  - Docker:
+    - docker/introduction.md
+    - docker/registry.md
+    - docker/environment.md
+    - docker/ports.md
+    - docker/volumes.md
+    - docker/cheatsheet.md
+    - docker/diving-in.md
+    - docker/docker-compose.md
+    - docker/best-practices.md
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
