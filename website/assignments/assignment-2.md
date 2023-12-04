@@ -4,7 +4,7 @@ Due Date: Thu Nov 23, 2023 - 11:59 PM
 
 ## Problem 1
 
-Follow the instructions in [Packaging a python app](../../ports/#figlet-web) to run figlet-web as a docker container.
+Follow the instructions in [Packaging a python app](../../docker/ports/#figlet-web) to run figlet-web as a docker container.
 
 You can run the docker container in the background using the flag `-d`.
 
@@ -61,6 +61,6 @@ $ datasette serve --host 0.0.0.0 --port 8000 railways.db
 ### Your tasks
 
 * Build the docker image and push it to registry as `registry.k8x.in/railways-alpha`
-* Run the docker container exposing port 8091 on the host
+* Run the docker container exposing port `8091` on the host
 * Proxy it from nginx serving host `railways-docker.alpha.k8x.in`
 * Setup https

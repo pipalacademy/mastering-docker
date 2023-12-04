@@ -3,3 +3,4 @@ pyinfra
 Click
 tabulate
 mkdocs-material
+mkdocs-autorefs

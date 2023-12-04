@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="main">
+    <h1>Dashboard</h1>
+
+    <div class="sidebar">
+        {% for nb in notebooks %}
+            <div class="notebook-link"><a href="/nb/{{nb}}">{{nb}}</a></div>
+        {% endfor %}
+    </div>
+    <div class="notebooks">
+        {% for nb in notebooks %}
+            <div class="notebook-wrapper">
+                <h2 class="notebook-title">{{nb}}</h2>
+                <div class="notebook" id="notebook-{{nb}}"></div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script type="text/javascript">
+    var DELAY = 5000;
+
+    function reloadNotebooks() {
+        {% for nb in notebooks %}
+            renderNotebook("#notebook-{{nb}}", "/nbtail/{{nb}}.ipynb");
+        {% endfor %}
+        setTimeout(reloadNotebooks, DELAY);
+    }
+
+    reloadNotebooks();
+</script>
+
+{% endblock %}

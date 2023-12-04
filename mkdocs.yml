@@ -9,6 +9,8 @@ theme:
   name: material
 
 nav:
+  - The Course:
+    - syllabus.md
   - Getting Started:
     - getting-started/lab-setup.md
     - getting-started/vim.md
@@ -23,10 +25,24 @@ nav:
     - docker/cheatsheet.md
     - docker/diving-in.md
     - docker/docker-compose.md
-    - docker/best-practices.md
+    - docker/optimizing-images.md
+    # - docker/best-practices.md
+  - Notes:
+    - notes/session3.md
+  - Assignments:
+    - assignments/assignment-1.md
+    - assignments/assignment-2.md
+    - assignments/assignment-3.md
+    - assignments/assignment-4.md
 
+# plugins:
+#   - autorefs
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

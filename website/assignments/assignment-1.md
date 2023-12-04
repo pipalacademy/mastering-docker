@@ -1,6 +1,6 @@
 # Assignment 1
 
-Due Date: Mon Nov 20, 2023 - 11:59 PM
+Due Date: Tue Nov 21, 2023 - 11:59 PM
 
 ## Problem 1: Build & Deploy FastAPI docs
 
